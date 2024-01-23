@@ -1,2 +1,2 @@
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/bbytesq/backend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/bbytesq/backend-project-44/actions) 123
+[![Actions Status](https://github.com/bbytesq/backend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/bbytesq/backend-project-44/actions) 
