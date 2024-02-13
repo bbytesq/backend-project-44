@@ -26,10 +26,11 @@ export const gcd = (a, b) => {
       counter += 1;
     } else {
       console.log(`${r} is wrong answer ;(, Correct answer: ${correctGcd}`);
+      return 
     }
     console.log(counter);
     if (counter > 0 && counter < 3) {
-      gcd();
+      gcdGame();
     }
   };
 gcdGame();
