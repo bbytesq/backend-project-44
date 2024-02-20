@@ -5,11 +5,9 @@ hello()
 let counter = 0;
 let win = false;
 export const isEven= () => {
-    console.log('Answer "yes" if the number is even, otherwise answer "no"')
-    console.log(getRandomInt(100))
+    console.log('Answer "yes" if the number is even, otherwise answer "no".')
     console.log(`Question: ${getRandomInt(100)}`);
-    const answer = readlineSync.question(`Your answer: `)
-    console.log(answer)  
+    const answer = readlineSync.question(`Your answer: `) 
 	if (getRandomInt(100) % 2 == 0 && answer === "yes" ) {
         console.log(`Correct!`)
         counter += 1
@@ -26,7 +24,6 @@ export const isEven= () => {
         console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.Let's try again, ${name}!`)
         return 
     }
-    console.log(counter)
     if (counter > 0 && counter < 3){
         isEven();
     }
