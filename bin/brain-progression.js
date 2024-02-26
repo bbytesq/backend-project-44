@@ -1,14 +1,14 @@
 #!/usr/bin/env node
-import readlineSync from "readline-sync";
-import hello, { getRandomInt } from "../src/cli.js";
-import { name } from "../src/cli.js";
+import readlineSync from 'readline-sync';
+import hello, { getRandomInt } from '../src/cli.js';
+import { name } from '../src/cli.js';
 
 hello();
 console.log(`What number is missing in the progression?`);
 let count = 0;
 const progressionVal = (answer, trueVal) => {
   if (answer === trueVal) {
-    console.log("Correct!");
+    console.log('Correct!');
     count += 1;
   } else {
     count += 10;
@@ -29,10 +29,10 @@ while (count < 3) {
   }
   const index = getRandomInt(9);
   const trueVal = arr[index - 1] + (arr[index + 1] - arr[index - 1]) / 2;
-  arr[index] = "..";
-  console.log(`Question: ${arr.join(" ")}`);
+  arr[index] = '..';
+  console.log(`Question: ${arr.join(' ')}`);
   const answer = parseInt(
-    readlineSync.question("Your answer: ") || "no answer"
+    readlineSync.question('Your answer: ') || 'no answer'
   );
   progressionVal(answer, trueVal);
   if (count === 3) {
