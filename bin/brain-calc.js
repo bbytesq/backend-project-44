@@ -33,7 +33,7 @@ const calc = () => {
   } else {
     console.log(`${r} is wrong answer ;(, Correct answer: ${result}`);
     console.log(`Let's try again, ${name}!`);
-    return
+    return;
   }
   if (counter > 0 && counter < 3) {
     calc();
