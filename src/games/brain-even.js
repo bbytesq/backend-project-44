@@ -1,5 +1,5 @@
 import {name, getRandomInt, } from '../cli.js';
-import readlineSync, { question } from 'readline-sync';
+import readlineSync from 'readline-sync';
 const isEven = () => {
     console.log(`'Answer "yes" if the number is even, otherwise answer "no"'`);
     let winCount = 0;
