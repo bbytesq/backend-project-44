@@ -26,7 +26,7 @@ const isEven = () => {
         }
     }
     if (winCount === 3) {
-        console.log(`Congratulations, ${name}`);
+        console.log(`Congratulations, ${name}!`);
     }
 };
 isEven();
