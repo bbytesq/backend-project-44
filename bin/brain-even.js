@@ -7,7 +7,7 @@ const isEven = () => {
     console.log(`'Answer "yes" if the number is even, otherwise answer "no"'`);
     let winCount = 0;
     while (winCount < 3) {
-        const question = Math.floor(Math.random() * 100);
+        const question = getRandomInt(100);
         console.log(`Question: ${question}`);
         const answer = readlineSync.question('Your answer: ');
         let correctAnswer = question % 2;
