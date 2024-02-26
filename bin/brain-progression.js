@@ -12,7 +12,7 @@ const progressionVal = (answer, trueVal) => {
         count += 1;
     } else {
         count += 10;
-        console.log(`${answer} is wrong answer ;(. Correct answer was ${trueVal}.`);
+        console.log(`"${answer}" is wrong answer ;(. Correct answer was "${trueVal}."`);
         console.log(`Let's try again, ${name}!`);
     }
 };
@@ -30,8 +30,7 @@ while (count < 3) {
     arr[index] = '..';
     console.log(`Question: ${arr.join(' ')}`);
     const answer = parseInt(
-        readlineSync.question('Your answer: ') || 'no answer'
-    );
+        readlineSync.question('Your answer: ') || 'no answer');
     progressionVal(answer, trueVal);
     if (count === 3) {
         console.log(`Congratulations, ${name}!`);
