@@ -30,7 +30,6 @@ const gcdGame = () => {
     console.log(`Let's try again, ${name}!`);
     return;
   }
-  console.log(counter);
   if (counter > 0 && counter < 3) {
     gcdGame();
   }
