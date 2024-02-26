@@ -1,38 +1,32 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
+import readlineSync, { question } from 'readline-sync';
 import hello from '../src/cli.js';
 import {name, getRandomInt, } from '../src/cli.js';
 hello()
-let counter = 0;
-let win = false;
-export const isEven= () => {
-    console.log('Answer "yes" if the number is even, otherwise answer "no".')
-    console.log(`Question: ${getRandomInt(100)}`);
-    const answer = readlineSync.question(`Your answer: `) 
-	if (getRandomInt(100) % 2 == 0 && answer === "yes" ) {
-        console.log(`Correct!`)
-        counter += 1
-	}
-    if(getRandomInt(100) % 2 == 0 && answer === "no"){
-        console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.Let's try again, ${name}!`);
-        return 
+const isEven = () => {
+    console.log(`'Answer "yes" if the number is even, otherwise answer "no"'`);
+    let winCount = 0;
+    while (winCount < 3) {
+        const question = Math.floor(Math.random() * 100);
+        console.log(`Question: ${question}`);
+        const answer = readlineSync.question('Your answer: ');
+        let correctAnswer = question % 2;
+        if (correctAnswer === 1) {
+            correctAnswer = 'no';
+        } else if (correctAnswer === 0) {
+            correctAnswer = 'yes';
+        }
+        if (correctAnswer === answer) {
+            console.log('Correct!');
+            winCount = winCount + 1;
+        } else if (correctAnswer !== answer) {
+            console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+            console.log(`Let's try again, ${name}`);
+            return;
+        }
     }
-    if (getRandomInt(100) % 2 == 1 && answer === "no") {
-        console.log(`Correct!`)
-        counter += 1
-    }
-    if (getRandomInt(100) % 2 == 1 && answer === "yes") {
-        console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.Let's try again, ${name}!`)
-        return 
-    }
-    if (counter > 0 && counter < 3){
-        isEven();
-    }
-    if ( counter === 3 ){
-        win = true
+    if (winCount === 3) {
+        console.log(`Congratulations, ${name}`);
     }
 };
 isEven();
-  if(win === true){
-    console.log(`Congratulations, ${name}!`);
-  } 
