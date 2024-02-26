@@ -29,7 +29,7 @@ while (count < 3) {
     const trueVal = arr[index - 1] + (arr[index + 1] - arr[index - 1]) / 2;
     arr[index] = '..';
     console.log(`Question: ${arr.join(' ')}`);
-    const answer = parseInt(
+    const answer = parseInt( 
         readlineSync.question('Your answer: ') || 'no answer');
     progressionVal(answer, trueVal);
     if (count === 3) {
