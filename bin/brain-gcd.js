@@ -24,7 +24,7 @@ export const gcd = (a, b) => {
     console.log(`Question: ${num1} ${num2}`)
     r = parseInt(readlineSync.question("Your answer: "));
     if (r === correctGcd) {
-      console.log("Correct!");
+      console.log("Correct!");  
       counter += 1;
     } else {
       console.log(`"${r}" is wrong answer ;(, Correct answer: "${correctGcd}"`);

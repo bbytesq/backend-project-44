@@ -4,6 +4,7 @@ import hello, { getRandomInt } from "../src/cli.js";
 import { name } from "../src/cli.js";
 
 hello();
+console.log(`What number is missing in the progression?`)
 let count = 0;
 const progressionVal = (answer, trueVal) => {
     if (answer === trueVal) {
@@ -11,7 +12,8 @@ const progressionVal = (answer, trueVal) => {
         count += 1;
     } else {
         count += 10;
-        console.log(`${answer} is wrong answer ;(. Correct answer was ${trueVal}.\nLet's try again, ${name}`);
+        console.log(`${answer} is wrong answer ;(. Correct answer was ${trueVal}.`);
+        console.log(`Let's try again, ${name}!`);
     }
 };
 while (count < 3) {
@@ -26,7 +28,7 @@ while (count < 3) {
     const index = getRandomInt(9);
     const trueVal = arr[index - 1] + (arr[index + 1] - arr[index - 1]) / 2;
     arr[index] = '..';
-    console.log(`Question: ${arr}`);
+    console.log(`Question: ${arr.join(' ')}`);
     const answer = parseInt(
         readlineSync.question('Your answer: ') || 'no answer'
     );
