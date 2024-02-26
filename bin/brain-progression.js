@@ -12,7 +12,7 @@ const progressionVal = (answer, trueVal) => {
         count += 1;
     } else {
         count += 10;
-        console.log(`"${answer}" is wrong answer ;(. Correct answer was "${trueVal}."`);
+        console.log(`"${answer}" is wrong answer ;(. Correct answer was "${trueVal}"`);
         console.log(`Let's try again, ${name}!`);
     }
 };
