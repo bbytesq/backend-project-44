@@ -32,9 +32,9 @@ const calc = () => {
     counter += 1;
   } else {
     console.log(`${r} is wrong answer ;(, Correct answer: ${result}`);
+    console.log(`Let's try again, ${name}!`);
+    return
   }
-  console.log(`Let's try again, ${name}!`);
-  console.log(counter);
   if (counter > 0 && counter < 3) {
     calc();
   }
