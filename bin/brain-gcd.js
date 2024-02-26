@@ -26,7 +26,7 @@ export const gcd = (a, b) => {
       console.log("Correct!");
       counter += 1;
     } else {
-      console.log(`${r} is wrong answer ;(, Correct answer: ${correctGcd}`);
+      console.log(`"${r}" is wrong answer ;(, Correct answer: "${correctGcd}"`);
       return 
     }
     console.log(counter);
