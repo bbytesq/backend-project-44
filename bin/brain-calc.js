@@ -13,15 +13,15 @@ const calc = () => {
   let result = 0;
   switch (rapon) {
     case 0:
-      console.log(`${num1} * ${num2}`);
+      console.log(`Question: ${num1} * ${num2}`);
       result = num1 * num2;
       break;
     case 1:
-      console.log(`${num1} + ${num2}`);
+      console.log(`Question: ${num1} + ${num2}`);
       result = num1 + num2;
       break;
     case 2:
-      console.log(`${num1} - ${num2}`);
+      console.log(`Question: ${num1} - ${num2}`);
       result = num1 - num2;
       break;
   }
