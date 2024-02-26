@@ -32,6 +32,7 @@ let j = []
     counter += 1;
   } else {
     console.log(`${r} is wrong answer ;(, Correct answer: ${correctAnswer}`);
+    console.log(`Let's try again, ${name}!`);
     return 
   }
   console.log(counter);
