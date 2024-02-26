@@ -20,6 +20,7 @@ export const gcd = (a, b) => {
     const num1 = getRandomInt(100);
     const num2 = getRandomInt(100);
     const correctGcd = gcd(num1, num2);
+    console.log(`Find the greatest common divisor of given numbers.`)
     console.log(`Question: ${num1} ${num2}`)
     r = parseInt(readlineSync.question("Your answer: "));
     if (r === correctGcd) {
