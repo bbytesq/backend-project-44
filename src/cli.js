@@ -7,8 +7,8 @@ const hello = () => {
   name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}`);
 };
-const getRandomInt = (num) => {
-  return Math.floor(Math.random() * num);
+const getRandomInt = (min = 1, max = 100) => {
+  return Math.floor(Math.random() * (max - min) + min);
 };
 export { name, random, getRandomInt };
 export default hello;

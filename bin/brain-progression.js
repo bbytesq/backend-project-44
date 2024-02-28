@@ -1,41 +1,36 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
+import readlineSync, { question } from 'readline-sync';
 import hello, { getRandomInt } from '../src/cli.js';
 import { name } from '../src/cli.js';
-
 hello();
-console.log(`What number is missing in the progression?`);
-let count = 0;
-const progressionVal = (answer, trueVal) => {
-  if (answer === trueVal) {
-    console.log('Correct!');
-    count += 1;
+let counter = 0;
+let r;
+const progression = () => {
+  let num1 = getRandomInt(100);
+  let arr = [num1];
+  let num2 = getRandomInt(5, 10);
+  let num3 = getRandomInt(2, 6);
+  for (let i = 0; i <= num2; i += 1) {
+    arr.push(arr[i] + num3);
+  }
+  const hideNum = getRandomInt(1, arr.length);
+  const trueVal = arr[hideNum];
+  arr[hideNum] = '..';
+  console.log(`Question: ${arr.join(' ')}`);
+  r = parseInt(readlineSync.question(`Your answer: `));
+  if (r === trueVal) {
+    console.log(`Correct!`);
+    counter += 1;
   } else {
-    count += 10;
-    console.log(
-      `"${answer}" is wrong answer ;(. Correct answer was "${trueVal}"`
-    );
+    console.log(`'${r}' is wrong answer ;(, Correct answer: '${trueVal}'.`);
     console.log(`Let's try again, ${name}!`);
+    return;
+  }
+  if (counter > 0 && counter < 3) {
+    progression();
   }
 };
-while (count < 3) {
-  const arr = [];
-  let firstProgressionVal = getRandomInt(100);
-  const progressionDiff = getRandomInt(10);
-  while (arr.length !== 10) {
-    const result = progressionDiff + firstProgressionVal;
-    arr.push(result);
-    firstProgressionVal = result;
-  }
-  const index = getRandomInt(9);
-  const trueVal = arr[index - 1] + (arr[index + 1] - arr[index - 1]) / 2;
-  arr[index] = '..';
-  console.log(`Question: ${arr.join(' ')}`);
-  const answer = parseInt(
-    readlineSync.question('Your answer: ') || 'no answer'
-  );
-  progressionVal(answer, trueVal);
-  if (count === 3) {
-    console.log(`Congratulations, ${name}!`);
-  }
+progression();
+if (counter === 3) {
+  console.log(`Congratulations, ${name}!`);
 }
