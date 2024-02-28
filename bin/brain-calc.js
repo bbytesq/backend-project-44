@@ -3,13 +3,14 @@ import readlineSync from 'readline-sync';
 import hello, { getRandomInt } from '../src/cli.js';
 import { name } from '../src/cli.js';
 hello();
+console.log('What is the result of the expression?');
 let r;
 let counter = 0;
 const calc = () => {
   const opers = ['*', '+', '-'];
-  const rapon = getRandomInt(opers.length);
-  let num1 = getRandomInt(100);
-  let num2 = getRandomInt(100);
+  const rapon = getRandomInt(0, opers.length - 1);
+  let num1 = getRandomInt(0, 100);
+  let num2 = getRandomInt(0, 100);
   let result = 0;
   switch (rapon) {
     case 0:
@@ -24,8 +25,9 @@ const calc = () => {
       console.log(`Question: ${num1} - ${num2}`);
       result = num1 - num2;
       break;
+    default:
+      break;
   }
-  console.log('What is the result of the expression?');
   r = readlineSync.question('Your answer: ');
   if (+r === result) {
     console.log('Correct!');
