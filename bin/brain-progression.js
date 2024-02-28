@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import readlineSync, { question } from 'readline-sync';
+import readlineSync from 'readline-sync';
 import hello, { getRandomInt } from '../src/cli.js';
 import { name } from '../src/cli.js';
 hello();
