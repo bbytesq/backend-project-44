@@ -26,7 +26,7 @@ const gcdGame = () => {
     console.log('Correct!');
     counter += 1;
   } else {
-    console.log(`'${r}' is wrong answer ;(, Correct answer: '${correctGcd}'`);
+    console.log(`'${r}' is wrong answer ;(. Correct answer: '${correctGcd}'`);
     console.log(`Let's try again, ${name}!`);
     return;
   }
