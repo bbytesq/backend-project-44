@@ -2,6 +2,7 @@
 import readlineSync from 'readline-sync';
 import hello, { getRandomInt } from '../src/cli.js';
 import { name } from '../src/cli.js';
+
 hello();
 console.log('What is the result of the expression?');
 let r;
@@ -9,8 +10,8 @@ let counter = 0;
 const calc = () => {
   const opers = ['*', '+', '-'];
   const rapon = getRandomInt(0, opers.length - 1);
-  let num1 = getRandomInt(0, 100);
-  let num2 = getRandomInt(0, 100);
+  const num1 = getRandomInt(0, 100);
+  const num2 = getRandomInt(0, 100);
   let result = 0;
   switch (rapon) {
     case 0:

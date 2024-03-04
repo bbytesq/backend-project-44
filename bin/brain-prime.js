@@ -2,6 +2,7 @@
 import readlineSync from 'readline-sync';
 import hello, { getRandomInt } from '../src/cli.js';
 import { name } from '../src/cli.js';
+
 hello();
 const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 console.log(rule);
@@ -19,7 +20,7 @@ const isPrime = (num) => {
 const getPrimeGame = () => {
   let j = [];
   const num1 = getRandomInt(100);
-  if (num1 != 0) {
+  if (num1 !== 0) {
     j.push(num1);
   } else {
     j.push(getRandomInt(100));

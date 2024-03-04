@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+
 let name;
 let random;
 const hello = () => {

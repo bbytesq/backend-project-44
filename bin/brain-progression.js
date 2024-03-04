@@ -2,14 +2,16 @@
 import readlineSync from 'readline-sync';
 import hello, { getRandomInt } from '../src/cli.js';
 import { name } from '../src/cli.js';
+
 hello();
 let counter = 0;
 let r;
+console.log(`What number is missing in the progression?`);
 const progression = () => {
-  let num1 = getRandomInt(100);
+  const num1 = getRandomInt(100);
   let arr = [num1];
-  let num2 = getRandomInt(5, 10);
-  let num3 = getRandomInt(2, 6);
+  const num2 = getRandomInt(5, 10);
+  const num3 = getRandomInt(2, 6);
   for (let i = 0; i <= num2; i += 1) {
     arr.push(arr[i] + num3);
   }
@@ -17,9 +19,9 @@ const progression = () => {
   const trueVal = arr[hideNum];
   arr[hideNum] = '..';
   console.log(`Question: ${arr.join(' ')}`);
-  r = parseInt(readlineSync.question(`Your answer: `));
+  r = parseInt(readlineSync.question('Your answer: '));
   if (r === trueVal) {
-    console.log(`Correct!`);
+    console.log('Correct!');
     counter += 1;
   } else {
     console.log(`'${r}' is wrong answer ;(, Correct answer: '${trueVal}'.`);
