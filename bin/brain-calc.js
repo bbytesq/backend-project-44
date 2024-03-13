@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import hello, { getRandomInt } from '../src/cli.js';
-import { name } from '../src/cli.js';
+import getRandomInt from '../src/cli.js';
+import name from '../src/cli.js';
+import hello from '../src/cli.js';
 
 hello();
 console.log('What is the result of the expression?');
