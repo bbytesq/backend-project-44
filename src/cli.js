@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
-let name;
-let random;
+const name;
+const random;
 const hello = () => {
   console.log('brain-games');
   console.log('Welcome to the Brain Games!');
